@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: 'https://jpcadastro.onrender.com',
-
+    baseURL: 'https://jp-cadastro.onrender.com',
 })
 
 const conMembros = {
