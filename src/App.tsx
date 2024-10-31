@@ -12,10 +12,10 @@ function PegaMembros() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const nascimento = new Date(nasc);
+    const formattedDate = nasc.split('-').join('-');
 
     try {
-      await conMembros.createMembro(nome, nascimento, cpf);
+      await conMembros.createMembro(nome, formattedDate, cpf); // Passando 'formattedDate'
       alert('Membro cadastrado com sucesso!');
       setNome('');
       setNasc('');
@@ -25,7 +25,7 @@ function PegaMembros() {
       console.error('Erro ao cadastrar membro:', error);
       alert('Erro ao cadastrar membro.');
     }
-  };
+};
 
   const fetchMembros = async () => {
     try {
